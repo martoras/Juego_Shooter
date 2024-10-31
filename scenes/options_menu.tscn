@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://2w8s6gtpqbnj"]
+
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_2v8yp"]
+
+[node name="Options_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 180.0
+offset_top = 257.0
+offset_right = -138.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2v8yp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 27.0
+offset_right = 758.0
+offset_bottom = 137.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Volumen" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volumen"
+
+[node name="Atras" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Atras"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Volumen" to="." method="_on_volumen_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Atras" to="." method="_on_atras_pressed"]

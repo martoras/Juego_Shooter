@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://vd5rprw2tqg6"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_s8por"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jvhdw"]
+load_path = "res://.godot/imported/Idle1.png-62159bd341f73ea5cc01fb61f088154d.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eglom"]
+size = Vector2(20, 35)
+
+[node name="enemy" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_s8por")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-07, 0.275)
+scale = Vector2(0.35, 0.33)
+texture = SubResource("CompressedTexture2D_jvhdw")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 25.7568, 48.6662)
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_eglom")
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

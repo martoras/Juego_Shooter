@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bby8ik0u0wl4i"]
+
+[ext_resource type="Texture2D" uid="uid://pf7w14ayc3y6" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_27.png" id="1_gqjux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmdu4"]
+size = Vector2(743, 15)
+
+[node name="Suelo" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(23.2806, 0.906366)
+texture = ExtResource("1_gqjux")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, -7.5)
+shape = SubResource("RectangleShape2D_cmdu4")
